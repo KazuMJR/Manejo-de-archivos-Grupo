@@ -264,27 +264,27 @@ void copiar() {
     string origen, archivo, destino;
     
     cout << "\n\033[1mSeleccione el directorio de origen:\033[0m\n";
-    cout << "[1] \033[34mC:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo\033[0m\n"<<endl;
-    cout << "[2] \033[34mC:/Users/jasso/Desktop/VS_CODE\033[0m\n"<<endl;
-    cout << "[3] \033[34mC:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal\033[0m\n"<<endl;
+    cout << "[1] \033[34mDirectorio_1\033[0m\n"<<endl;
+    cout << "[2] \033[34mDirectorio_2\033[0m\n"<<endl;
+    cout << "[3] \033[34mDirectorio_3\033[0m\n"<<endl;
     cout << "[4] \033[1;31mVolver\033[0m\n"<<endl;
     cout << "\033[1mOpcion: \033[0m";
     getline(cin, origen);
     cout << " ===========================================================================================================================================================\n" << endl;
     if (origen == "1") {
-        origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo";
+        origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_1";
         cout << " ===========================================================================================================================================================\n" << endl;
         list_dir(origen);
         cout << " ===========================================================================================================================================================\n" << endl;
         cout << " ===========================================================================================================================================================\n" << endl;
     } else if (origen == "2") {
-        origen = "C:/Users/jasso/Desktop/VS_CODE";
+        origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_2";
         cout << " ===========================================================================================================================================================\n" << endl;
         list_dir(origen);
         cout << " ===========================================================================================================================================================\n" << endl;
         cout << " ===========================================================================================================================================================\n" << endl;
     } else if (origen == "3") {
-        origen = "C:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal";
+        origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_3";
         cout << " ===========================================================================================================================================================\n" << endl;
         list_dir(origen);
         cout << " ===========================================================================================================================================================\n" << endl;
@@ -304,19 +304,19 @@ void copiar() {
     
     cout << " ===========================================================================================================================================================\n" << endl;
     cout << "\033[1mSeleccione el directorio de destino:\033[0m\n";
-    cout << "[1] \033[34mC:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo\033[0m\n"<<endl;
-    cout << "[2] \033[34mC:/Users/jasso/Desktop/VS_CODE\033[0m\n"<<endl;
-    cout << "[3] \033[34mC:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal\033[0m\n"<<endl;
+    cout << "[1] \033[34mDirectorio_1\033[0m\n"<<endl;
+    cout << "[2] \033[34mDirectorio_2\033[0m\n"<<endl;
+    cout << "[3] \033[34mDirectorio_3\033[0m\n"<<endl;
     cout << "[4] \033[34mBuscar otro archivo\033[0m\n"<<endl;
     cout << "\033[1mOpcion: \033[0m";
     getline(cin, destino);
     cout << " ===========================================================================================================================================================\n" << endl;
     if (destino == "1") {
-        destino = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo";
+        destino = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_1";
     } else if (destino == "2") {
-        destino = "C:/Users/jasso/Desktop/VS_CODE";
+        destino = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_2";
     } else if (destino == "3") {
-        destino = "C:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal";
+        destino = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_3";
     } 
     else if (destino == "4"){
         return init();
@@ -344,18 +344,24 @@ void copiar() {
 void ejecutar() {
     string valor;
     cout << "\n\033[1mSeleccione una opcion para ejecutar\033[0m\n";
-    cout << "[1] \033[34mAbrir PSeInt\033[0m\n[2] \033[34mAbrir VS code\033[0m\n[3] \033[1;31mVolver\033[0m\n";
+    cout << "[1] \033[34mAbrir PSeInt\033[0m\n[2] \033[34mAbrir VS Code\033[0m\n[3] \033[34mAbrir Word\033[0m\n[4] \033[34mAbrir PowerPoint\033[0m\n[5] \033[1;31mVolver\033[0m\n";
     cout << "\033[1mOpcion: \033[0m";
     cin >> valor;
     cin.ignore();
 
     if (valor == "1") {
-        system("C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Abrir.psc");
+        system("C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Abrir.psc");
         return init();
     } else if (valor == "2") {
-        system("C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Abrir.c++");
+        system("C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Abrir.c++");
         return init();
     } else if (valor == "3") {
+        system("C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Abrir.docx");
+        return init();
+    } else if (valor == "4") {
+        system("C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Abrir.pptx");
+        return init();
+    } else if (valor == "5") {
         return init();
     } else {
         cout << "\n\033[1;31mOpcion no valida.\033[0m\n";
@@ -368,7 +374,7 @@ void ejecutar() {
 void Comprimir_Descomprimir() {
     string opcion, origen, archivo, destino;
 
-    cout << "[0] \033[1:31mVolver\033[0m\n"<<endl;
+    cout << "[0] \033[1;31mVolver\033[0m\n"<<endl;
     cout << "\n\033[1m[1] Comprimir  [2] Descomprimir\033[0m\n"<<endl;
     cout << "\033[1mSeleccione una opcion: \033[0m";
     getline(cin, opcion);
@@ -376,23 +382,23 @@ void Comprimir_Descomprimir() {
 
     if (opcion == "1") {
         cout << "\n\033[1mSeleccione el directorio de origen:\033[0m\n"<<endl;
-        cout << "[1] \033[34mC:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo\033[0m\n"<<endl;
-        cout << "[2] \033[34mC:/Users/jasso/Desktop/VS_CODE\033[0m\n"<<endl;
-        cout << "[3] \033[34mC:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal\033[0m\n"<<endl;
+        cout << "[1] \033[34mDirectorio_1\033[0m\n"<<endl;
+        cout << "[2] \033[34mDirectorio_2\033[0m\n"<<endl;
+        cout << "[3] \033[34mDirectorio_3\033[0m\n"<<endl;
         cout << "[4] \033[1;31mVolver\033[0m\n"<<endl;
         cout << "\033[1mOpcion: \033[0m";
         getline(cin, origen);
         cout << " ===========================================================================================================================================================\n" << endl;
         if (origen == "1") {
-            origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo";
+            origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_1";
             list_dir(origen);
             cout << " ===========================================================================================================================================================\n" << endl;
         } else if (origen == "2") {
-            origen = "C:/Users/jasso/Desktop/VS_CODE";
+            origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_2";
             list_dir(origen);
             cout << " ===========================================================================================================================================================\n" << endl;
         } else if (origen == "3") {
-            origen = "C:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal";
+            origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_3";
             list_dir(origen);
             cout << " ===========================================================================================================================================================\n" << endl;
         } 
@@ -416,39 +422,42 @@ void Comprimir_Descomprimir() {
             return;
         }
 
-        // Modificacion aquí para asegurar que solo se agregue .7z 
+        // Modificación para asegurar que solo se agregue .7z
         size_t pos = archivo.find_last_of('.');
         string nombre_sin_extension = archivo.substr(0, pos);
         string archivo_comprimido = nombre_sin_extension + ".7z";
+        string ruta_destino = origen + "/" + archivo_comprimido;
 
-        string comando = "7z a \"" + archivo_comprimido + "\" \"" + ruta_origen + "\"";
+        string comando = "7z a \"" + ruta_destino + "\" \"" + ruta_origen + "\"";
         int resultado = system(comando.c_str());
 
         if (resultado == 0) {
             cout << "\n\033[1;32mArchivo comprimido correctamente.\033[0m\n";
+            cout << "\033[1mEl archivo comprimido se encuentra en: \033[32m" << ruta_destino << "\033[0m\n";
             cout << " ===========================================================================================================================================================\n" << endl;
         } else {
             cout << "\n\033[1;31mError al comprimir el archivo.\033[0m\n";
             cout << " ===========================================================================================================================================================\n" << endl;
-        }} else if (opcion == "2") {
+        }
+    } else if (opcion == "2") {
         cout << "\n\033[1mSeleccione el directorio del archivo comprimido:\033[0m\n";
-        cout << "[1] \033[34mC:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo\033[0m\n"<<endl;
-        cout << "[2] \033[34mC:/Users/jasso/Desktop/VS_CODE\033[0m\n"<<endl;
-        cout << "[3] \033[34mC:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal\033[0m\n"<<endl;
+        cout << "[1] \033[34mDirectorio_1\033[0m\n"<<endl;
+        cout << "[2] \033[34mDirectorio_2\033[0m\n"<<endl;
+        cout << "[3] \033[34mDirectorio_3\033[0m\n"<<endl;
         cout << "[4] \033[1;31mVolver\033[0m\n"<<endl;
         cout << "\033[1mOpcion: \033[0m";
         getline(cin, origen);
         cout << " ===========================================================================================================================================================\n" << endl;
         if (origen == "1") {
-            origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo";
+            origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_1";
             list_dir(origen);
             cout << " ===========================================================================================================================================================\n" << endl;
         } else if (origen == "2") {
-            origen = "C:/Users/jasso/Desktop/VS_CODE";
+            origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_2";
             list_dir(origen);
             cout << " ===========================================================================================================================================================\n" << endl;
         } else if (origen == "3") {
-            origen = "C:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal";
+            origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_3";
             list_dir(origen);
             cout << " ===========================================================================================================================================================\n" << endl;
         } 
@@ -465,55 +474,51 @@ void Comprimir_Descomprimir() {
         archivo = agregar_extension(archivo, extensiones); // Agregar la extension.
 
         cout << "\n\033[1mSeleccione el directorio de destino:\033[0m\n";
-        cout << "[1] \033[34mC:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo\033[0m\n"<<endl;
-        cout << "[2] \033[34mC:/Users/jasso/Desktop/VS_CODE\033[0m\n"<<endl;
-        cout << "[3] \033[34mC:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal\033[0m\n"<<endl;
+        cout << "[1] \033[34mDirectorio_1\033[0m\n"<<endl;
+        cout << "[2] \033[34mDirectorio_2\033[0m\n"<<endl;
+        cout << "[3] \033[34mDirectorio_3\033[0m\n"<<endl;
         cout << "[4] \033[34mBuscar otro archivo\033[0m\n"<<endl;
         cout << "\033[1mOpcion: \033[0m";
         getline(cin, destino);
         cout << " ===========================================================================================================================================================\n" << endl;
         if (destino == "1") {
-            destino = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo";
+            destino = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_1";
         } else if (destino == "2") {
-            destino = "C:/Users/jasso/Desktop/VS_CODE";
+            destino = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_2";
         } else if (destino == "3") {
-            destino = "C:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal";
+            destino = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_3";
         } 
          else if (destino == "4"){
             return Comprimir_Descomprimir();
         }
         else {
-            cout << "\n\033[1mOpcion no valida.\033[0m\n";
+                        cout << "\n\033[1mOpcion no valida.\033[0m\n";
             return;
         }
 
         string ruta_origen = origen + "/" + archivo;
-        string ruta_destino = destino;
-
         if (!fs::exists(ruta_origen)) {
-            cout << "\n\033[1mEl archivo comprimido especificado no existe.\033[0m\n";
+            cout << "\n\033[1mEl archivo especificado no existe.\033[0m\n";
             cout << " ===========================================================================================================================================================\n" << endl;
             return;
         }
 
-        string comando = "7z x \"" + ruta_origen + "\" -o\"" + ruta_destino + "\"";
+        string comando = "7z x \"" + ruta_origen + "\" -o\"" + destino + "\"";
         int resultado = system(comando.c_str());
 
         if (resultado == 0) {
-            cout << "\n\033[1mArchivo descomprimido correctamente.\033[0m\n";
+            cout << "\n\033[1;32mArchivo descomprimido correctamente.\033[0m\n";
+            cout << "\033[1mEl archivo descomprimido se encuentra en: \033[32m" << destino << "\033[0m\n";
             cout << " ===========================================================================================================================================================\n" << endl;
         } else {
-            cout << "\n\033[1mError al descomprimir el archivo.\033[0m\n";
+            cout << "\n\033[1;31mError al descomprimir el archivo.\033[0m\n";
             cout << " ===========================================================================================================================================================\n" << endl;
         }
-    }
-     else if (origen == "0"){
-            return init();
-        }
-     else {
+    } else {
         cout << "\n\033[1mOpcion no valida.\033[0m\n";
     }
 }
+
 
 // Funcion para buscar archivos por nombre en un directorio
 void buscar_archivo_por_nombre() {
@@ -522,24 +527,24 @@ void buscar_archivo_por_nombre() {
     string opcion;
 
     cout << "\n\033[1mSeleccione el directorio donde desea buscar el archivo:\033[0m\n";
-    cout << "[1] \033[34mC:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo\033[0m\n"<<endl;
-    cout << "[2] \033[34mC:/Users/jasso/Desktop/VS_CODE\033[0m\n"<<endl;
-    cout << "[3] \033[34mC:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal\033[0m\n"<<endl;
+    cout << "[1] \033[34mDirectorio_1\033[0m\n"<<endl;
+    cout << "[2] \033[34mDirectorio_2\033[0m\n"<<endl;
+    cout << "[3] \033[34mDirectorio_3\033[0m\n"<<endl;
     cout << "[4] \033[1;31mVolver\033[0m\n"<<endl;
     cout << "\033[1mOpcion: \033[0m";
     getline(cin, opcion);
     cout << " ===========================================================================================================================================================\n" << endl;
 
     if (opcion == "1") {
-        directorio = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo";
+        directorio = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_1";
         list_dir(directorio);
         cout << " ===========================================================================================================================================================\n" << endl;
     } else if (opcion == "2") {
-        directorio = "C:/Users/jasso/Desktop/VS_CODE";
+        directorio = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_2";
         list_dir(directorio);
         cout << " ===========================================================================================================================================================\n" << endl;
     } else if (opcion == "3") {
-        directorio = "C:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal";
+        directorio = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_3";
         list_dir(directorio);
         cout << " ===========================================================================================================================================================\n" << endl;
     } 
@@ -577,19 +582,19 @@ void ordenararchivos() {
 
     // Seleccionar la carpeta a ordenar
     cout << "\n\033[1mSeleccione la carpeta a ordenar:\033[0m\n";
-    cout << "[1] \033[34mC:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo\033[0m\n"<<endl;
-    cout << "[2] \033[34mC:/Users/jasso/Desktop/VS_CODE\033[0m\n"<<endl;
-    cout << "[3] \033[34mC:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal\033[0m\n"<<endl;
+    cout << "[1] \033[34mDirectorio_1\033[0m\n"<<endl;
+    cout << "[2] \033[34mDirectorio_2\033[0m\n"<<endl;
+    cout << "[3] \033[34mDirectorio_3\033[0m\n"<<endl;
     cout << "\033[1mOpcion: \033[0m";
     getline(cin, opcion);
     cout << " ===========================================================================================================================================================\n" << endl;
 
     if (opcion == "1") {
-        folderPath = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo";
+        folderPath = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_1";
     } else if (opcion == "2") {
-        folderPath = "C:/Users/jasso/Desktop/VS_CODE";
+        folderPath = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_2";
     } else if (opcion == "3") {
-        folderPath = "C:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal";
+        folderPath = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_3";
     } else {
         cout << "\n\033[1mOpcion no valida.\033[0m\n";
         return;
@@ -646,7 +651,7 @@ void ordenararchivos() {
 
 //Funcion para encriptar y desencriptar un archivo
 void Encriptar_Desencriptar() {
-    cout << "\033[1m\033[34m                       Encriptación con AES-CPU                           \033[0m" << endl;
+    cout << "\033[1m\033[34m                       Encriptacion con AES-CPU                           \033[0m" << endl;
 
     int element = 0;
     string inputFile, outputFile;
@@ -655,29 +660,29 @@ void Encriptar_Desencriptar() {
 
     // Seleccionar el archivo de entrada
     cout << "\n\033[1mSeleccione el directorio de origen:\033[0m\n";
-    cout << "[1] \033[34mC:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo\033[0m\n"<<endl;
-    cout << "[2] \033[34mC:/Users/jasso/Desktop/VS_CODE\033[0m\n"<<endl;
-    cout << "[3] \033[34mC:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal\033[0m\n"<<endl;
+    cout << "[1] \033[34mDirectorio_1\033[0m\n"<<endl;
+    cout << "[2] \033[34mDirectorio_2\033[0m\n"<<endl;
+    cout << "[3] \033[34mDirectorio_3\033[0m\n"<<endl;
     cout << "[4] \033[1;31mVolver\033[0m\n"<<endl;
-    cout << "\033[1mOpción: \033[0m";
+    cout << "\033[1mOpcion: \033[0m";
     getline(cin, origen);
     cout << " ===========================================================================================================================================================\n" << endl;
 
     if (origen == "1") {
-        origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo";
+        origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_1";
         list_dir(origen);
     } else if (origen == "2") {
-        origen = "C:/Users/jasso/Desktop/VS_CODE";
+        origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_2";
         list_dir(origen);
     } else if (origen == "3") {
-        origen = "C:/Users/jasso/Desktop/VS_CODE/progra_tarea_grupal";
+        origen = "C:/Users/jasso/Desktop/VS_CODE/Manejo_de_archivos_en_grupo/Directorios/Directorio_3";
         list_dir(origen);
     } 
     else if (origen == "4"){
         return init();
     }
     else {
-        cout << "\n\033[1mOpción no válida.\033[0m\n";
+        cout << "\n\033[1mOpcion no válida.\033[0m\n";
         return;
     }
 
@@ -689,7 +694,7 @@ void Encriptar_Desencriptar() {
     // Seleccionar la opción de encriptación o desencriptación
     cout << "\n\033[1mSeleccione una opcion:\033[0m\n"<<endl;
 
-    cout << "[1] Encriptar   [2] Desencriptar  [3] Volver  \n";
+    cout << "[1] Encriptar   [2] Desencriptar  [3] \033[1;31mVolver\033[0m\n";
 
     while (true) {
         cout << "Opcion:";
@@ -700,17 +705,19 @@ void Encriptar_Desencriptar() {
         cout << "\n\033[1;31mOpcion no valida. Intente de nuevo.\033[0m\n";
     }
 
-    // Generar el nombre del archivo de salida
-    if (codeOrder == 1) {
-        size_t pos = nombreArchivo.find_last_of('.');
-        string nombreSinExtension = nombreArchivo.substr(0, pos);
-        outputFile = nombreSinExtension + "_INVERT" + nombreArchivo.substr(pos);
-        cout << "\n\033[1mEl archivo de salida es: \033[32m" << outputFile << "\033[0m\n";
-    } else if (codeOrder == 2) {
-        size_t pos = nombreArchivo.find_last_of('.');
-        string nombreSinExtension = nombreArchivo.substr(0, pos);
-        outputFile = nombreSinExtension + "_INVERT" + nombreArchivo.substr(pos);
-        cout << "\n\033[1mEl archivo de salida es: \033[32m" << outputFile << "\033[0m\n";
+   // Generar el nombre del archivo de salida
+if (codeOrder == 1) {
+    size_t pos = nombreArchivo.find_last_of('.');
+    string nombreSinExtension = nombreArchivo.substr(0, pos);
+    outputFile = origen + "/" + nombreSinExtension + "_INVERT" + nombreArchivo.substr(pos);
+    cout << "\n\033[1mEl archivo de salida es: \033[32m" << outputFile << "\033[0m\n";
+
+} else if (codeOrder == 2) {
+    size_t pos = nombreArchivo.find_last_of('.');
+    string nombreSinExtension = nombreArchivo.substr(0, pos);
+    outputFile = origen + "/" + nombreSinExtension + "_INVERT" + nombreArchivo.substr(pos);
+    cout << "\n\033[1mEl archivo de salida es: \033[32m" << outputFile << "\033[0m\n";
+
     } else if (codeOrder == 3){
         return init();
     }
@@ -738,10 +745,10 @@ void Encriptar_Desencriptar() {
         ++count;
     }
 
-    cout << "\n\033[1mTamaño total: \033[32m" << count / 1000 << " Kb\033[0m\n";
+    cout << "\n\033[1mTamano total: \033[32m" << count / 1000 << " Kb\033[0m\n";
 
     if (codeOrder == 1)
-        cout << "\n\033[1mIniciando encriptación en CPU...\033[0m";
+        cout << "\n\033[1mIniciando encriptacion en CPU...\033[0m";
     else if (codeOrder == 2)
         cout << "\n\033[1mIniciando desencriptación en CPU...\033[0m";
 
